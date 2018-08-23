@@ -1,14 +1,18 @@
-/*
- * Create a list that holds all of your cards
- */
+// Variables
 
+const restart = $('.restart');
+const deck = $('.deck');
+const allCards = $('.card');
 
-/*
- * Display the cards on the page
- *   - shuffle the list of cards using the provided "shuffle" method below
- *   - loop through each card and create its HTML
- *   - add each card's HTML to the page
- */
+// Functions
+
+function showCards() {
+  allCards.addClass('open show');
+}
+
+function hideCards() {
+  allCards.removeClass('open show');
+}
 
 // Shuffle function from http://stackoverflow.com/a/2450976
 function shuffle(array) {
@@ -25,6 +29,19 @@ function shuffle(array) {
     return array;
 }
 
+function shuffleCards() {
+  let shuffledCards = shuffle(allCards);
+  shuffledCards.each(function(card){
+    deck.append(card);
+  })
+}
+
+// When restart button clicked, show cards, shuffle cards, hide cards, reset timer, reset moves, reset stars.
+restart.click(function() {
+  showCards();
+  setTimeout(shuffleCards, 2000);
+  setTimeout(hideCards, 2000);
+})
 
 /*
  * set up the event listener for a card. If a card is clicked:
