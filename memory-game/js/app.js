@@ -30,8 +30,12 @@ function shuffle(array) {
 }
 
 function shuffleCards() {
+  // Shuffle the cards
   let shuffledCards = shuffle(allCards);
-  shuffledCards.each(function(card){
+  // Iterate through the cards and create/clone their html
+  shuffledCards.each(function(){
+    let card = $('<li>').append($(this).clone()).html();
+    // Add the cards to the deck
     deck.append(card);
   })
 }
@@ -40,7 +44,7 @@ function shuffleCards() {
 restart.click(function() {
   showCards();
   setTimeout(shuffleCards, 2000);
-  setTimeout(hideCards, 2000);
+  setTimeout(hideCards, 4000);
 })
 
 /*
