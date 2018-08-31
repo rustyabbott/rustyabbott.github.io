@@ -34,15 +34,32 @@ function removeCards() {
   $('.deck > li').slice(0,16).remove();
 }
 
+// Timer
+let sec = 0;
+
+function pad(val) {
+  return val > 9 ? val : "0" + val;
+}
+
+function timer() {
+  setInterval(function(){
+    $('.seconds').html(pad(++sec%60));
+    $('.minutes').html(pad(parseInt(sec/60,10)));
+  }, 1000);
+}
+
 
 // When restart button clicked, show cards, shuffle cards, hide cards, reset timer, reset moves, reset stars.
 restart.click(function() {
+  $('.seconds').html('00');
+  $('.minutes').html('00');
   $('.card').addClass('open show');
   setTimeout(shuffleCards, 2000);
   setTimeout(removeCards, 2000);
   setTimeout(function () {
     $('.card').removeClass('open show match');
   }, 4000);
+  setTimeout(timer, 4000);
 })
 
 /*
