@@ -1,20 +1,9 @@
 // Variables
-
 const restart = $('.restart');
 const deck = $('.deck');
-const allCards = $('.card');
+let allCards = $('.card');
 
 // Functions
-
-function showCards() {
-  allCards.addClass('open show');
-}
-
-function hideCards() {
-  allCards.removeClass('open show');
-}
-
-// Shuffle function from http://stackoverflow.com/a/2450976
 function shuffle(array) {
     var currentIndex = array.length, temporaryValue, randomIndex;
 
@@ -40,11 +29,20 @@ function shuffleCards() {
   })
 }
 
+function removeCards() {
+  // Removes the first 16 cards
+  $('.deck > li').slice(0,16).remove();
+}
+
+
 // When restart button clicked, show cards, shuffle cards, hide cards, reset timer, reset moves, reset stars.
 restart.click(function() {
-  showCards();
+  $('.card').addClass('open show');
   setTimeout(shuffleCards, 2000);
-  setTimeout(hideCards, 4000);
+  setTimeout(removeCards, 2000);
+  setTimeout(function () {
+    $('.card').removeClass('open show match');
+  }, 4000);
 })
 
 /*
