@@ -1,7 +1,8 @@
 // Variables
 const restart = $('.restart');
 const deck = $('.deck');
-let allCards = $('.card');
+const allCards = $('.card');
+
 
 // Functions
 function shuffle(array) {
@@ -60,6 +61,17 @@ restart.click(function() {
     $('.card').removeClass('open show match');
   }, 4000);
   setTimeout(timer, 4000);
+})
+
+// When cards are clicked
+allCards.click(function(event) {
+  // Start the timer if it hasn't already
+  let minutes = $('.minutes').html(),
+      seconds = $('.seconds').html();
+  minutes == 00 && seconds == 00 ? timer() : '';
+  // Open the clicked card
+  let clickedCard = $(event.target);
+  clickedCard.addClass('open show');
 })
 
 /*
