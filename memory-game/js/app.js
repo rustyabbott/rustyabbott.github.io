@@ -1,11 +1,12 @@
-// Variables
+// Variables...
 const restart = $('.restart');
 const deck = $('.deck');
 const allCards = $('.card');
 let openedCards = [];
+let matchedCards = [];
 
 
-// Functions
+// Functions...
 function shuffle(array) {
     var currentIndex = array.length, temporaryValue, randomIndex;
 
@@ -21,18 +22,14 @@ function shuffle(array) {
 }
 
 function shuffleCards() {
-  // Shuffle the cards
   let shuffledCards = shuffle(allCards);
-  // Iterate through the cards and create/clone their html
   shuffledCards.each(function(){
     let card = $('<li>').append($(this).clone()).html();
-    // Add the cards to the deck
     deck.append(card);
   })
 }
 
 function removeCards() {
-  // Removes the first 16 cards
   $('.deck > li').slice(0,16).remove();
 }
 
@@ -50,6 +47,7 @@ function timer() {
   }, 1000);
 }
 
+// Listeners...
 
 // When restart button clicked, show cards, shuffle cards, hide cards, reset timer, reset moves, reset stars.
 restart.click(function() {
@@ -77,6 +75,10 @@ allCards.click(function(event) {
     if (openedCards[0].html() == openedCards[1].html()) {
       openedCards[0].addClass('match');
       openedCards[1].addClass('match');
+      matchedCards.push(clickedCard);
+      if (matchedCards.length == 8) {
+        alert("Game complete!");
+      }
       openedCards = [];
     } else {
       setTimeout(function() {
