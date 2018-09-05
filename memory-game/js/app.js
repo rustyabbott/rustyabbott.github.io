@@ -1,12 +1,10 @@
-// Variables...
 const restart = $('.restart');
 const deck = $('.deck');
-const allCards = $('.card');
+let allCards = $('.card');
 let openedCards = [];
 let matchedCards = [];
+let sec = 0;
 
-
-// Functions...
 function shuffle(array) {
     var currentIndex = array.length, temporaryValue, randomIndex;
 
@@ -27,14 +25,8 @@ function shuffleCards() {
     let card = $('<li>').append($(this).clone()).html();
     deck.append(card);
   })
-}
-
-function removeCards() {
   $('.deck > li').slice(0,16).remove();
 }
-
-// Timer
-let sec = 0;
 
 function pad(val) {
   return val > 9 ? val : "0" + val;
@@ -47,23 +39,7 @@ function timer() {
   }, 1000);
 }
 
-// Listeners...
-
-// When restart button clicked, show cards, shuffle cards, hide cards, reset timer, reset moves, reset stars.
-restart.click(function() {
-  $('.seconds').html('00');
-  $('.minutes').html('00');
-  $('.card').addClass('open show');
-  setTimeout(shuffleCards, 2000);
-  setTimeout(removeCards, 2000);
-  setTimeout(function () {
-    $('.card').removeClass('open show match');
-  }, 4000);
-  setTimeout(timer, 4000);
-})
-
-// When cards are clicked...
-allCards.click(function(event) {
+allCards.click(function (event) {
   let minutes = $('.minutes').html(),
       seconds = $('.seconds').html();
   minutes == 00 && seconds == 00 ? timer() : '';
@@ -90,13 +66,11 @@ allCards.click(function(event) {
   }
 })
 
-/*
- * set up the event listener for a card. If a card is clicked:
- *  - display the card's symbol (put this functionality in another function that you call from this one)
- *  - add the card to a *list* of "open" cards (put this functionality in another function that you call from this one)
- *  - if the list already has another card, check to see if the two cards match
- *    + if the cards do match, lock the cards in the open position (put this functionality in another function that you call from this one)
- *    + if the cards do not match, remove the cards from the list and hide the card's symbol (put this functionality in another function that you call from this one)
- *    + increment the move counter and display it on the page (put this functionality in another function that you call from this one)
- *    + if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)
- */
+restart.click(function() {
+  $('.card').addClass('open show');
+  setTimeout(shuffleCards, 2000);
+  setTimeout(function() {
+    $('.card').removeClass('open show match');
+  }, 4000);
+  setTimeout(timer, 4000);
+})
