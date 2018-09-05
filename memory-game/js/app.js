@@ -2,6 +2,7 @@
 const restart = $('.restart');
 const deck = $('.deck');
 const allCards = $('.card');
+let openedCards = [];
 
 
 // Functions
@@ -63,15 +64,28 @@ restart.click(function() {
   setTimeout(timer, 4000);
 })
 
-// When cards are clicked
+// When cards are clicked...
 allCards.click(function(event) {
-  // Start the timer if it hasn't already
   let minutes = $('.minutes').html(),
       seconds = $('.seconds').html();
   minutes == 00 && seconds == 00 ? timer() : '';
-  // Open the clicked card
   let clickedCard = $(event.target);
   clickedCard.addClass('open show');
+  openedCards.push(clickedCard);
+  let numOfCards = openedCards.length;
+  if (numOfCards === 2) {
+    if (openedCards[0].html() == openedCards[1].html()) {
+      openedCards[0].addClass('match');
+      openedCards[1].addClass('match');
+      openedCards = [];
+    } else {
+      setTimeout(function() {
+        openedCards[0].removeClass('open show');
+        openedCards[1].removeClass('open show');
+        openedCards = [];
+      }, 1500);
+    }
+  }
 })
 
 /*
