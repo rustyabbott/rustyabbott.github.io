@@ -19,13 +19,26 @@ function shuffle(array) {
     return array;
 }
 
+function shuffle(array) {
+    var currentIndex = array.length, temporaryValue, randomIndex;
+
+    while (currentIndex !== 0) {
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+        temporaryValue = array[currentIndex];
+        array[currentIndex] = array[randomIndex];
+        array[randomIndex] = temporaryValue;
+    }
+
+    return array;
+}
+
 function shuffleCards() {
-  let shuffledCards = shuffle(allCards);
-  shuffledCards.each(function(){
-    let card = $('<li>').append($(this).clone()).html();
+  const allCardsArray = allCards.toArray();
+  const shuffledCards = shuffle(allCardsArray);
+  for (card of shuffledCards) {
     deck.append(card);
-  })
-  $('.deck > li').slice(0,16).remove();
+  }
 }
 
 function pad(val) {
@@ -38,6 +51,8 @@ function timer() {
     $('.minutes').html(pad(parseInt(sec/60,10)));
   }, 1000);
 }
+
+shuffleCards();
 
 allCards.click(function (event) {
   let minutes = $('.minutes').html(),
