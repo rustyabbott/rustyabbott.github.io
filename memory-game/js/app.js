@@ -1,9 +1,12 @@
 const restart = $('.restart');
 const deck = $('.deck');
+const minutes = $('.minutes');
+const seconds = $('.seconds');
 let allCards = $('.card');
 let openedCards = [];
 let matchedCards = [];
 let sec = 0;
+
 
 function shuffle(array) {
     var currentIndex = array.length, temporaryValue, randomIndex;
@@ -33,17 +36,15 @@ function pad(val) {
 
 function timer() {
   setInterval(function(){
-    $('.seconds').html(pad(++sec%60));
-    $('.minutes').html(pad(parseInt(sec/60,10)));
+    seconds.html(pad(++sec%60));
+    minutes.html(pad(parseInt(sec/60,10)));
   }, 1000);
 }
 
 shuffleCards();
 
 allCards.click(function (event) {
-  let minutes = $('.minutes').html(),
-      seconds = $('.seconds').html();
-  minutes == 00 && seconds == 00 ? timer() : '';
+  minutes.html() == 00 && seconds.html() == 00 ? timer() : '';
   let clickedCard = $(event.target);
   clickedCard.addClass('open show');
   openedCards.push(clickedCard);
@@ -68,10 +69,10 @@ allCards.click(function (event) {
 })
 
 restart.click(function() {
-  $('.card').addClass('open show');
+  allCards.addClass('open show');
   setTimeout(shuffleCards, 2000);
   setTimeout(function() {
-    $('.card').removeClass('open show match');
+    allCards.removeClass('open show match');
   }, 4000);
   setTimeout(timer, 4000);
 })
