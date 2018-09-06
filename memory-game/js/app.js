@@ -6,7 +6,7 @@ let allCards = $('.card');
 let openedCards = [];
 let matchedCards = [];
 let sec = 0;
-
+let timerId;
 
 function shuffle(array) {
     var currentIndex = array.length, temporaryValue, randomIndex;
@@ -35,16 +35,28 @@ function pad(val) {
 }
 
 function timer() {
-  setInterval(function(){
-    seconds.html(pad(++sec%60));
-    minutes.html(pad(parseInt(sec/60,10)));
-  }, 1000);
+  seconds.html(pad(++sec%60));
+  minutes.html(pad(parseInt(sec/60,10)));
+}
+
+function startTimer() {
+  timerId = setInterval(timer, 1000);
+}
+
+function stopTimer() {
+  clearInterval(timerId);
+}
+
+function resetTimer() {
+  sec = 0;
+  minutes.html('00');
+  seconds.html('00');
 }
 
 shuffleCards();
 
 allCards.click(function (event) {
-  minutes.html() == 00 && seconds.html() == 00 ? timer() : '';
+  minutes.html() == 00 && seconds.html() == 00 ? startTimer() : '';
   let clickedCard = $(event.target);
   clickedCard.addClass('open show');
   openedCards.push(clickedCard);
@@ -56,6 +68,7 @@ allCards.click(function (event) {
       matchedCards.push(clickedCard);
       if (matchedCards.length == 8) {
         alert("Game complete!");
+        stopTimer();
       }
       openedCards = [];
     } else {
@@ -63,16 +76,18 @@ allCards.click(function (event) {
         openedCards[0].removeClass('open show');
         openedCards[1].removeClass('open show');
         openedCards = [];
-      }, 1500);
+      }, 1000);
     }
   }
 })
 
 restart.click(function() {
+  stopTimer();
   allCards.addClass('open show');
   setTimeout(shuffleCards, 2000);
   setTimeout(function() {
     allCards.removeClass('open show match');
   }, 4000);
-  setTimeout(timer, 4000);
+  setTimeout(resetTimer, 5000);
+  setTimeout(startTimer, 6000);
 })
