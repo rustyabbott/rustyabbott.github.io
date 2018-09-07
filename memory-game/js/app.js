@@ -67,6 +67,7 @@ function resetTimer() {
   timerOff = true;
 }
 
+// Increase move counter, decrease stars, and store # of stars remaining
 function moveCounter() {
   moves++;
   counter.html(moves);
@@ -81,6 +82,7 @@ function resetCounter() {
   counter.html('0');
 }
 
+// Reset counter, show stars, show cards, shuffle cards, hide cards, then reset timer
 function showShuffleHide() {
   resetCounter();
   stars.show();
@@ -109,24 +111,32 @@ closeButton.click(function() {
 
 shuffleCards();
 
+// When a card is clicked...
 allCards.click(function (event) {
+  // Start the timer if it's not already running
   timerOff ? startTimer() : '';
+  // Show the card
   let clickedCard = $(event.target);
   clickedCard.addClass('open show');
+  // Add the open card to an array
   openedCards.push(clickedCard);
   let numOfCards = openedCards.length;
   if (numOfCards === 2) {
+    // Increase the counter by 1
     moveCounter();
+    // Match cards if they are the same
     if (openedCards[0].html() == openedCards[1].html()) {
       openedCards[0].addClass('match');
       openedCards[1].addClass('match');
       matchedCards.push(clickedCard);
+      // Display the modal once the game is complete
       if (matchedCards.length == 8) {
         stopTimer();
         displayModal();
       }
       openedCards = [];
     } else {
+      // Flip the cards down after 1/2 second if they don't match
       setTimeout(function() {
         openedCards[0].removeClass('open show');
         openedCards[1].removeClass('open show');
