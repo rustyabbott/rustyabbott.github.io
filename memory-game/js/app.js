@@ -17,6 +17,7 @@ let timerOff = true;
 let finalMoves = $('.final-moves');
 let finalStars = $('.final-stars');
 let finalTime = $('.final-time');
+let remainingStars = 5;
 
 function shuffle(array) {
     var currentIndex = array.length, temporaryValue, randomIndex;
@@ -69,10 +70,10 @@ function resetTimer() {
 function moveCounter() {
   moves++;
   counter.html(moves);
-  moves > 10 ? stars.first().hide() : '';
-  moves > 15 ? $('.stars li:nth-child(2)').hide() : '';
-  moves > 20 ? $('.stars li:nth-child(3)').hide() : '';
-  moves > 25 ? $('.stars li:nth-child(4)').hide() : '';
+  moves > 10 ? (stars.first().hide(), remainingStars = 4) : '';
+  moves > 15 ? ($('.stars li:nth-child(2)').hide(), remainingStars = 3) : '';
+  moves > 20 ? ($('.stars li:nth-child(3)').hide(), remainingStars = 2) : '';
+  moves > 25 ? ($('.stars li:nth-child(4)').hide(), remainingStars = 1) : '';
 }
 
 function resetCounter() {
@@ -94,7 +95,7 @@ function showShuffleHide() {
 function displayModal() {
   modal.css('display', 'block');
   finalMoves.html('Moves: ' + moves);
-  finalStars.html('Stars: ');
+  finalStars.html('Stars: ' + remainingStars);
   finalTime.html('Time: ' + minutes.html() + ':' + seconds.html())
   replayButton.click(function(){
     modal.hide();
@@ -103,7 +104,7 @@ function displayModal() {
 }
 
 closeButton.click(function() {
-  modal.show();
+  modal.hide();
 })
 
 shuffleCards();
