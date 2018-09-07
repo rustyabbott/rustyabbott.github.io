@@ -130,7 +130,7 @@ allCards.click(function (event) {
       openedCards[1].addClass('match');
       matchedCards.push(clickedCard);
       // Display the modal once the game is complete
-      if (matchedCards.length == 8) {
+      if (matchedCards.length % 8 === 0) {
         stopTimer();
         displayModal();
       }
