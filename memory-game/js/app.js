@@ -61,7 +61,7 @@ function resetTimer() {
 
 function moveCounter() {
   moves++;
-  counter.html(moves / 2);
+  counter.html(moves);
   moves > 1 ? stars.first().hide() : '';
   moves > 2 ? $('.stars li:nth-child(2)').hide() : '';
   moves > 3 ? $('.stars li:nth-child(3)').hide() : '';
@@ -77,13 +77,12 @@ shuffleCards();
 
 allCards.click(function (event) {
   timerOff ? startTimer() : '';
-  moveCounter();
   let clickedCard = $(event.target);
   clickedCard.addClass('open show');
   openedCards.push(clickedCard);
   let numOfCards = openedCards.length;
-  numOfCards > 1 ? disableClick = true : disableClick = false;
   if (numOfCards === 2) {
+    moveCounter();
     if (openedCards[0].html() == openedCards[1].html()) {
       openedCards[0].addClass('match');
       openedCards[1].addClass('match');
