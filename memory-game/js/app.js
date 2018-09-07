@@ -2,7 +2,7 @@ const restart = $('.restart');
 const deck = $('.deck');
 const minutes = $('.minutes');
 const seconds = $('.seconds');
-const stars = $('.fa-star');
+const stars = $('.stars li');
 let allCards = $('.card');
 let openedCards = [];
 let matchedCards = [];
@@ -10,6 +10,7 @@ let sec = 0;
 let timerId;
 let moves = 0;
 let counter = $('.moves');
+let timerOff = true;
 
 function shuffle(array) {
     var currentIndex = array.length, temporaryValue, randomIndex;
@@ -44,6 +45,7 @@ function pad(val) {
 
 function startTimer() {
   timerId = setInterval(timer, 1000);
+  timerOff = false;
 }
 
 function stopTimer() {
@@ -54,15 +56,16 @@ function resetTimer() {
   sec = 0;
   minutes.html('00');
   seconds.html('00');
+  timerOff = true;
 }
 
 function moveCounter() {
   moves++;
   counter.html(moves / 2);
-  moves > 20 ? stars.first().hide() : '';
-  moves > 26 ? $('.stars li:nth-child(2)').hide() : '';
-  moves > 30 ? $('.stars li:nth-child(3)').hide() : '';
-  moves > 32 ? $('.stars li:nth-child(4)').hide() : '';
+  moves > 1 ? stars.first().hide() : '';
+  moves > 2 ? $('.stars li:nth-child(2)').hide() : '';
+  moves > 3 ? $('.stars li:nth-child(3)').hide() : '';
+  moves > 4 ? $('.stars li:nth-child(4)').hide() : '';
 }
 
 function resetCounter() {
@@ -73,12 +76,13 @@ function resetCounter() {
 shuffleCards();
 
 allCards.click(function (event) {
-  minutes.html() == '00' && seconds.html() == '00' ? startTimer() : '';
+  timerOff ? startTimer() : '';
   moveCounter();
   let clickedCard = $(event.target);
   clickedCard.addClass('open show');
   openedCards.push(clickedCard);
   let numOfCards = openedCards.length;
+  numOfCards > 1 ? disableClick = true : disableClick = false;
   if (numOfCards === 2) {
     if (openedCards[0].html() == openedCards[1].html()) {
       openedCards[0].addClass('match');
@@ -108,5 +112,5 @@ restart.click(function() {
   setTimeout(function() {
     allCards.removeClass('open show match');
   }, 3000);
-  setTimeout(resetTimer, 3100);
+  setTimeout(resetTimer, 3000);
 })
