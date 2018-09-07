@@ -3,6 +3,9 @@ const deck = $('.deck');
 const minutes = $('.minutes');
 const seconds = $('.seconds');
 const stars = $('.stars li');
+const modal = $('#myModal');
+const closeButton = $('.close');
+const replayButton = $('.replay-button');
 let allCards = $('.card');
 let openedCards = [];
 let matchedCards = [];
@@ -11,6 +14,9 @@ let timerId;
 let moves = 0;
 let counter = $('.moves');
 let timerOff = true;
+let finalMoves = $('.final-moves');
+let finalStars = $('.final-stars');
+let finalTime = $('.final-time');
 
 function shuffle(array) {
     var currentIndex = array.length, temporaryValue, randomIndex;
@@ -29,6 +35,7 @@ function shuffle(array) {
 function shuffleCards() {
   const allCardsArray = allCards.toArray();
   const shuffledCards = shuffle(allCardsArray);
+
   for (card of shuffledCards) {
     deck.append(card);
   }
@@ -40,7 +47,7 @@ function timer() {
 }
 
 function pad(val) {
-  return val > 9 ? val : "0" + val;
+  return val > 9 ? val : '0' + val;
 }
 
 function startTimer() {
@@ -62,16 +69,42 @@ function resetTimer() {
 function moveCounter() {
   moves++;
   counter.html(moves);
-  moves > 1 ? stars.first().hide() : '';
-  moves > 2 ? $('.stars li:nth-child(2)').hide() : '';
-  moves > 3 ? $('.stars li:nth-child(3)').hide() : '';
-  moves > 4 ? $('.stars li:nth-child(4)').hide() : '';
+  moves > 10 ? stars.first().hide() : '';
+  moves > 15 ? $('.stars li:nth-child(2)').hide() : '';
+  moves > 20 ? $('.stars li:nth-child(3)').hide() : '';
+  moves > 25 ? $('.stars li:nth-child(4)').hide() : '';
 }
 
 function resetCounter() {
   moves = 0;
   counter.html('0');
 }
+
+function showShuffleHide() {
+  resetCounter();
+  stars.show();
+  allCards.removeClass('match').addClass('open show');
+  setTimeout(shuffleCards, 2000);
+  setTimeout(function() {
+    allCards.removeClass('open show match');
+  }, 3000);
+  setTimeout(resetTimer, 3000);
+}
+
+function displayModal() {
+  modal.css('display', 'block');
+  finalMoves.html('Moves: ' + moves);
+  finalStars.html('Stars: ');
+  finalTime.html('Time: ' + minutes.html() + ':' + seconds.html())
+  replayButton.click(function(){
+    modal.hide();
+    showShuffleHide();
+  })
+}
+
+closeButton.click(function() {
+  modal.show();
+})
 
 shuffleCards();
 
@@ -88,8 +121,8 @@ allCards.click(function (event) {
       openedCards[1].addClass('match');
       matchedCards.push(clickedCard);
       if (matchedCards.length == 8) {
-        alert("Game complete!");
         stopTimer();
+        displayModal();
       }
       openedCards = [];
     } else {
@@ -97,19 +130,12 @@ allCards.click(function (event) {
         openedCards[0].removeClass('open show');
         openedCards[1].removeClass('open show');
         openedCards = [];
-      }, 1000);
+      }, 500);
     }
   }
 })
 
 restart.click(function() {
   stopTimer();
-  resetCounter();
-  stars.show();
-  allCards.removeClass('match').addClass('open show');
-  setTimeout(shuffleCards, 2000);
-  setTimeout(function() {
-    allCards.removeClass('open show match');
-  }, 3000);
-  setTimeout(resetTimer, 3000);
+  showShuffleHide();
 })
