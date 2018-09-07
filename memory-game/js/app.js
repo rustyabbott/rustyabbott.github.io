@@ -7,6 +7,8 @@ let openedCards = [];
 let matchedCards = [];
 let sec = 0;
 let timerId;
+let moves = 0;
+let counter = $('.moves');
 
 function shuffle(array) {
     var currentIndex = array.length, temporaryValue, randomIndex;
@@ -30,13 +32,13 @@ function shuffleCards() {
   }
 }
 
-function pad(val) {
-  return val > 9 ? val : "0" + val;
-}
-
 function timer() {
   seconds.html(pad(++sec%60));
   minutes.html(pad(parseInt(sec/60,10)));
+}
+
+function pad(val) {
+  return val > 9 ? val : "0" + val;
 }
 
 function startTimer() {
@@ -53,10 +55,21 @@ function resetTimer() {
   seconds.html('00');
 }
 
+function moveCounter() {
+  moves++;
+  counter.html(moves / 2);
+}
+
+function resetCounter() {
+  moves = 0;
+  counter.html('0');
+}
+
 shuffleCards();
 
 allCards.click(function (event) {
-  minutes.html() == 00 && seconds.html() == 00 ? startTimer() : '';
+  minutes.html() == '00' && seconds.html() == '00' ? startTimer() : '';
+  moveCounter();
   let clickedCard = $(event.target);
   clickedCard.addClass('open show');
   openedCards.push(clickedCard);
@@ -83,11 +96,11 @@ allCards.click(function (event) {
 
 restart.click(function() {
   stopTimer();
-  allCards.addClass('open show');
+  resetCounter();
+  allCards.removeClass('match').addClass('open show');
   setTimeout(shuffleCards, 2000);
   setTimeout(function() {
     allCards.removeClass('open show match');
-  }, 4000);
-  setTimeout(resetTimer, 5000);
-  setTimeout(startTimer, 6000);
+  }, 3000);
+  setTimeout(resetTimer, 3100);
 })
