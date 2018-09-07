@@ -2,6 +2,7 @@ const restart = $('.restart');
 const deck = $('.deck');
 const minutes = $('.minutes');
 const seconds = $('.seconds');
+const stars = $('.fa-star');
 let allCards = $('.card');
 let openedCards = [];
 let matchedCards = [];
@@ -58,6 +59,10 @@ function resetTimer() {
 function moveCounter() {
   moves++;
   counter.html(moves / 2);
+  moves > 20 ? stars.first().hide() : '';
+  moves > 26 ? $('.stars li:nth-child(2)').hide() : '';
+  moves > 30 ? $('.stars li:nth-child(3)').hide() : '';
+  moves > 32 ? $('.stars li:nth-child(4)').hide() : '';
 }
 
 function resetCounter() {
@@ -97,6 +102,7 @@ allCards.click(function (event) {
 restart.click(function() {
   stopTimer();
   resetCounter();
+  stars.show();
   allCards.removeClass('match').addClass('open show');
   setTimeout(shuffleCards, 2000);
   setTimeout(function() {
