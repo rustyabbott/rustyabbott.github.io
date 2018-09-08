@@ -7,7 +7,7 @@ const modal = $('#myModal');
 const closeButton = $('.close');
 const replayButton = $('.replay-button');
 let allCards = $('.card');
-let openedCards = [];
+let clickedCardArray = [];
 let matchedCards = [];
 let sec = 0;
 let timerId;
@@ -92,6 +92,9 @@ function showShuffleHide() {
     allCards.removeClass('open show match');
   }, 3000);
   setTimeout(resetTimer, 3000);
+  matchedCards = [];
+  allCards.off('click');
+  allCards.click(clickCard);
 }
 
 function displayModal() {
@@ -109,42 +112,43 @@ closeButton.click(function() {
   modal.hide();
 })
 
-shuffleCards();
-
-// When a card is clicked...
-allCards.click(function (event) {
+// This function used when a card is clicked
+function clickCard(event) {
   // Start the timer if it's not already running
   timerOff ? startTimer() : '';
   // Show the card
   let clickedCard = $(event.target);
-  clickedCard.addClass('open show');
+  clickedCard.addClass('open show').off('click');
   // Add the open card to an array
-  openedCards.push(clickedCard);
-  let numOfCards = openedCards.length;
-  if (numOfCards === 2) {
+  clickedCardArray.push(clickedCard);
+  if (clickedCardArray.length === 2) {
     // Increase the counter by 1
     moveCounter();
     // Match cards if they are the same
-    if (openedCards[0].html() == openedCards[1].html()) {
-      openedCards[0].addClass('match');
-      openedCards[1].addClass('match');
+    if (clickedCardArray[0].html() == clickedCardArray[1].html()) {
+      clickedCardArray[0].addClass('match');
+      clickedCardArray[1].addClass('match');
       matchedCards.push(clickedCard);
       // Display the modal once the game is complete
       if (matchedCards.length % 8 === 0) {
         stopTimer();
         displayModal();
       }
-      openedCards = [];
+      clickedCardArray = [];
     } else {
-      // Flip the cards down after 1/2 second if they don't match
+      // Flip the cards down after 0.6 second if they don't match
       setTimeout(function() {
-        openedCards[0].removeClass('open show');
-        openedCards[1].removeClass('open show');
-        openedCards = [];
+        clickedCardArray[0].removeClass('open show').click(clickCard);
+        clickedCardArray[1].removeClass('open show').click(clickCard);
+        clickedCardArray = [];
       }, 600);
     }
   }
-})
+}
+
+shuffleCards();
+
+allCards.click(clickCard);
 
 restart.click(function() {
   stopTimer();
