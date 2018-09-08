@@ -141,7 +141,7 @@ allCards.click(function (event) {
         openedCards[0].removeClass('open show');
         openedCards[1].removeClass('open show');
         openedCards = [];
-      }, 500);
+      }, 600);
     }
   }
 })
