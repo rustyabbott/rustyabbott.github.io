@@ -1,0 +1,151 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  color: #757575;
+  font-family: Gotham, gotham, Verdana, sans-serif;
+  font-size: 16px;
+}
+
+img {
+  height: auto;
+  width: 100%;
+}
+
+figure {
+  width: 100%;
+  margin: 0 auto;
+}
+
+a {
+  color: #3178ae;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #3999af;
+}
+
+a:visited {
+  color: #3178ae;
+}
+
+.container {
+  display: grid;
+  grid-gap: 5px;
+  grid-template-areas:
+    "header header header"
+    "about about about"
+    "image image image"
+    "project1 project2 project3"
+    "footer footer footer";
+  grid-template-columns: 1fr 1fr 1fr;
+  max-width: 1024px;
+  justify-items: center;
+  margin: 0 auto;
+}
+
+.item1 {
+  grid-area: header;
+  width: 100%;
+  display: grid;
+  grid-template-areas:
+    "logo name"
+    "logo tag";
+  grid-template-columns: 20% 80%;
+  border-bottom: 1px solid #757575;
+  justify-items: end;
+}
+
+.item2 {
+  grid-area: about;
+  max-width: 960px;
+}
+
+.item3 {
+  grid-area: image;
+  max-width: 960px;
+}
+
+.project1 {
+ grid-area: project1;
+}
+
+.project2 {
+  grid-area: project2;
+}
+
+.project3 {
+  grid-area: project3;
+}
+
+.item4 {
+  grid-area: footer;
+}
+
+.item1__logo {
+  grid-area: logo;
+  height: auto;
+  width: 100%;
+  max-width: 90px;
+  place-self: start;
+}
+
+.item1__name {
+  grid-area: name;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.item1__tag {
+  grid-area: tag;
+  font-size: 1em;
+}
+
+.main {
+  height: auto;
+  width: 100%;
+}
+
+h1 {
+  font-size: 1em;
+  font-weight: bold;
+  max-width: 960px;
+  width: 100%;
+}
+
+h2 {
+  font-size: .9em;
+  text-align: center;
+}
+
+/* tablet */
+@media screen and (min-width: 640px ) {
+  .item1__name {
+    font-size: 3em;
+  }
+
+  .item1__tag {
+    font-size: 1.5em;
+  }
+}
+
+/* desktop */
+@media screen and (min-width: 1024px) {
+  .item1__logo {
+    max-width: 120px;
+  }
+  
+  .item1__name {
+    font-size: 4em;
+  }
+
+  .item1__tag {
+    font-size: 2em;
+  }
+
+  .project1, .project2, .project3 {
+    width: 81%;
+  }
+}
