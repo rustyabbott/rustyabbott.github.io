@@ -70,14 +70,23 @@ a:visited {
 
 .project1 {
  grid-area: project1;
+ width: 100%;
+ height: auto;
+ max-width: 276px;
 }
 
 .project2 {
   grid-area: project2;
+  width: 100%;
+  height: auto;
+  max-width: 276px;
 }
 
 .project3 {
   grid-area: project3;
+  width: 100%;
+  height: auto;
+  max-width: 276px;
 }
 
 .item4 {
@@ -171,9 +180,5 @@ h2 {
 
   .item1__tag {
     font-size: 2em;
-  }
-
-  .project1, .project2, .project3 {
-    width: 81%;
   }
 }
