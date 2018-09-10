@@ -120,6 +120,34 @@ h2 {
   text-align: center;
 }
 
+.project-square {
+  width: 100%;
+  height: auto;
+  color: white;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.one {
+  background-color: #3491a3;
+}
+
+.two {
+  background-color: #7eb8de;
+}
+
+.three {
+  background-color: #3c78aa;
+}
+
+.project-square span {
+  width: 100%;
+  height: auto;
+  font-size: 225px;
+  font-weight: bolder;
+  text-align: center;
+}
+
 /* tablet */
 @media screen and (min-width: 640px ) {
   .item1__name {
@@ -136,7 +164,7 @@ h2 {
   .item1__logo {
     max-width: 120px;
   }
-  
+
   .item1__name {
     font-size: 4em;
   }
