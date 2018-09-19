@@ -1,3 +1,6 @@
 [submodule "arcade-game"]
 	path = arcade-game
 	url = https://github.com/rustyabbott/arcade-game
+[submodule "memory-game"]
+	path = memory-game
+	url = https://github.com/rustyabbott/memory-game
