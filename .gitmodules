@@ -4,3 +4,6 @@
 [submodule "memory-game"]
 	path = memory-game
 	url = https://github.com/rustyabbott/memory-game
+[submodule "feedreader"]
+	path = feedreader
+	url = https://github.com/rustyabbott/feedreader
