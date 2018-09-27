@@ -165,8 +165,6 @@ h2 {
       "project1 project2 project3"
       "project4 project5 project6"
       "footer footer footer";
-    grid-template-columns: 1fr 1fr 1fr;
-    max-width: 1024px;
     justify-items: center;
     margin: 0 auto;
   }
@@ -182,6 +180,20 @@ h2 {
 
 /* desktop */
 @media screen and (min-width: 1024px) {
+  .container {
+    display: grid;
+    grid-gap: 5px;
+    grid-template-areas:
+      "header header header header"
+      "about about about about"
+      "project1 project2 project3 project4"
+      "project6 project6 project7 project8"
+      "footer footer footer footer";
+    max-width: 1024px;
+    justify-items: center;
+    margin: 0 auto;
+  }
+
   .header__logo {
     max-width: 120px;
   }
