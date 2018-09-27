@@ -119,6 +119,12 @@ h2 {
   height: auto;
 }
 
+.project5 {
+  grid-area: project5;
+  width: 100%;
+  height: auto;
+}
+
 .project-square {
   width: 100%;
   height: auto;
@@ -141,6 +147,10 @@ h2 {
 
 .four {
   background-color: #95d680;
+}
+
+.five {
+  background-color: #9966ff;
 }
 
 .project-square span {
@@ -187,7 +197,7 @@ h2 {
       "header header header header"
       "about about about about"
       "project1 project2 project3 project4"
-      "project6 project6 project7 project8"
+      "project5 project6 project7 project8"
       "footer footer footer footer";
     max-width: 1024px;
     justify-items: center;
