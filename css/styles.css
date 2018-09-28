@@ -164,10 +164,21 @@ h2 {
   grid-area: footer;
 }
 
-.social {
-  background-color: gray;
-  height: 36px;
-  width: 36px;
+.social-icon {
+  height: 24px;
+  width: 24px;
+}
+
+.twitter {
+  background-color: black;
+}
+
+.footer ul {
+  list-style-type: none;
+}
+
+.footer ul li {
+  display: inline-block;
 }
 
 .copywrite p {
