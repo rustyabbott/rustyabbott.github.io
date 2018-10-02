@@ -7,3 +7,6 @@
 [submodule "feedreader"]
 	path = feedreader
 	url = https://github.com/rustyabbott/feedreader
+[submodule "restaurant-reviews"]
+	path = restaurant-reviews
+	url = https://github.com/rustyabbott/restaurant-reviews
