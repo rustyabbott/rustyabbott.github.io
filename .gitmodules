@@ -10,3 +10,6 @@
 [submodule "restaurant-reviews"]
 	path = restaurant-reviews
 	url = https://github.com/rustyabbott/restaurant-reviews
+[submodule "react-myreads"]
+	path = react-myreads
+	url = https://github.com/rustyabbott/react-myreads

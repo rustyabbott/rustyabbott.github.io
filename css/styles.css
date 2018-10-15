@@ -41,6 +41,7 @@ a:visited {
     "project1 project2"
     "project3 project4"
     "project5 project6"
+    "project7 project8"
     "footer footer";
   grid-auto-columns: 1fr;
   max-width: 1024px;
@@ -131,6 +132,12 @@ h2 {
   height: auto;
 }
 
+.project7 {
+  grid-area: project7;
+  width: 100%;
+  height: auto;
+}
+
 .project-square {
   width: 100%;
   height: auto;
@@ -161,6 +168,10 @@ h2 {
 
 .six {
   background-color: #ff6347;
+}
+
+.seven {
+  background-color: #fff284;
 }
 
 .project-square span {
@@ -205,6 +216,7 @@ h2 {
       "about about about"
       "project1 project2 project3"
       "project4 project5 project6"
+      "project7 project8 project9"
       "footer footer footer";
     justify-items: center;
     margin: 0 auto;
