@@ -5,7 +5,7 @@
 html {
   color: #757575;
   font-family: Gotham, gotham, Verdana, sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   padding: 5px;
 }
 
@@ -45,8 +45,8 @@ a:visited {
     "footer footer";
   grid-auto-columns: 1fr;
   max-width: 1024px;
-  justify-items: center;
   margin: 0 auto;
+  justify-items: center;
 }
 
 .header {
@@ -81,9 +81,8 @@ a:visited {
 }
 
 h1 {
-  font-size: 1em;
+  font-size: 1.5em;
   font-weight: bold;
-  max-width: 960px;
   width: 100%;
 }
 
@@ -243,7 +242,6 @@ h2 {
       "project5 project6 project7 project8"
       "footer footer footer footer";
     max-width: 1024px;
-    justify-items: center;
     margin: 0 auto;
   }
 
