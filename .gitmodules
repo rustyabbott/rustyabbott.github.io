@@ -13,3 +13,6 @@
 [submodule "react-myreads"]
 	path = react-myreads
 	url = https://github.com/rustyabbott/react-myreads
+[submodule "neighborhood-map"]
+	path = neighborhood-map
+	url = https://github.com/rustyabbott/neighborhood-map

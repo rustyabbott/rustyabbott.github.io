@@ -137,6 +137,12 @@ h2 {
   height: auto;
 }
 
+.project8 {
+  grid-area: project8;
+  width: 100%;
+  height: auto;
+}
+
 .project-square {
   width: 100%;
   height: auto;
@@ -171,6 +177,10 @@ h2 {
 
 .seven {
   background-color: #fff284;
+}
+
+.eight {
+  background-color: #d73e68;
 }
 
 .project-square span {
