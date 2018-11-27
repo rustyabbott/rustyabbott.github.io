@@ -6,7 +6,8 @@ const cacheFiles = [
   '/js/main.js',
   '/img/github-icon.svg',
   '/img/logo.jpg',
-  '/img/twitter-icon.svg'
+  '/img/twitter-icon.svg',
+  '/img/portrait.jpg'
 ];
 
 self.addEventListener('install', event => {

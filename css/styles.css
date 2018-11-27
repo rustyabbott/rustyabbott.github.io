@@ -36,14 +36,10 @@ a:visited {
   display: grid;
   grid-gap: 5px;
   grid-template-areas:
-    "header header"
-    "about about"
-    "project1 project2"
-    "project3 project4"
-    "project5 project6"
-    "project7 project8"
-    "footer footer";
-  grid-auto-columns: 1fr;
+    "header"
+    "about"
+    "projects"
+    "footer";
   max-width: 1024px;
   margin: 0 auto;
   justify-items: center;
@@ -59,6 +55,24 @@ a:visited {
   grid-template-columns: 20% 80%;
   border-bottom: 1px solid #757575;
   justify-items: end;
+}
+
+.projects {
+  grid-area: projects;
+  grid-gap: 5px;
+  display: grid;
+  grid-template-areas:
+    "software software"
+    "project1 project2"
+    "project3 project4"
+    "project5 project6"
+    "project7 project8";
+    width: 100%;
+    grid-auto-columns: 1fr;
+}
+
+.software {
+  grid-area: software;
 }
 
 .header__logo {
@@ -215,54 +229,51 @@ h2 {
   margin: 5px auto;
 }
 
+.portrait {
+  width: 100%;
+  height: auto;
+  float: left;
+  padding: 0 10px 10px 0;
+}
+
 /* tablet */
 @media screen and (min-width: 640px ) {
-  .container {
-    display: grid;
-    grid-gap: 5px;
+  .projects {
     grid-template-areas:
-      "header header header"
-      "about about about"
+      "software software software"
       "project1 project2 project3"
       "project4 project5 project6"
-      "project7 project8 project9"
-      "footer footer footer";
-    justify-items: center;
-    margin: 0 auto;
+      "project7 project8 project9";
   }
-
   .header__name {
     font-size: 3em;
   }
-
   .header__tag {
     font-size: 1.5em;
+  }
+  .portrait {
+    max-width: 300px;
   }
 }
 
 /* desktop */
 @media screen and (min-width: 1024px) {
   .container {
-    display: grid;
-    grid-gap: 5px;
-    grid-template-areas:
-      "header header header header"
-      "about about about about"
-      "project1 project2 project3 project4"
-      "project5 project6 project7 project8"
-      "footer footer footer footer";
     max-width: 1024px;
     margin: 0 auto;
   }
-
+  .projects {
+    grid-template-areas:
+      "software software software software"
+      "project1 project2 project3 project4"
+      "project5 project6 project7 project8";
+  }
   .header__logo {
     max-width: 120px;
   }
-
   .header__name {
     font-size: 4em;
   }
-
   .header__tag {
     font-size: 2em;
   }
