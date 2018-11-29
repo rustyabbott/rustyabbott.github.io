@@ -2,38 +2,39 @@
 <html lang="en">
   <head>
     <meta name="description" content="A compilation of software engineering and web development projects by Rusty Abbott. Languages utilized include JavaScript, jQuery, React, PHP, SQL, HTML5, and CSS3.">
-  	<meta property="og:title" content="Rusty Abbott | Developer Profile">
+  	<meta property="og:title" content="Rusty Abbott | Developer Portfolio">
   	<meta property="og:image" content="">
   	<meta property="og:url" content="https://rusty.ninja">
   	<meta property="og:type" content="website">
   	<meta name="twitter:card" content="summary_large_image">
   	<meta name="twitter:site" content="@rustyabbott">
-  	<meta name="twitter:title" content="Rusty Abbott | Developer Profile">
+  	<meta name="twitter:title" content="Rusty Abbott | Developer Portfolio">
   	<meta name="twitter:description" content="A compilation of software engineering and web development projects by Rusty Abbott. Languages utilized include JavaScript, jQuery, React, PHP, SQL, HTML5, and CSS3.">
   	<meta name="twitter:image" content="">
     <meta charset="utf-8">
     <meta name="robots" content="noindex, nofollow">
     <meta name="viewport" content="width=device-width, initial-scael=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/styles.css">
-    <title>Rusty Abbott | Developer Profile</title>
+    <title>Rusty Abbott | Developer Portfolio</title>
   </head>
 
   <body>
     <div class="container">
       <header class="header">
-        <div class="header__logo">
-          <img src="img/logo.jpg" alt="logo">
-        </div>
+        <a href="javascript:void(0);" class="burger" onclick="openNav()">
+          <i class="fa fa-bars"></i>
+        </a>
         <div class="header__name">Rusty Abbott</div>
-        <div class="header__tag">Web Developer</div>
+        <div class="header__tag">Full Stack Developer</div>
       </header>
 
       <section class="about">
-        <h1>About Me</h1>
-        <p><img src="img/portrait.jpg" alt="Rusty Abbott" class="portrait">Welcome to my portfolio! My name is Rusty Abbott and I'm from Stuart, Florida. Here you'll find a collection of projects I'm working on. <a href="https://hutchinson-island.com" target="_blank">Hutchinson-Island.com</a> and <a href="http://rustyabbott.com" target="_blank">RustyAbbott.com</a> are websites I've developed for my work as a real estate broker associate and the rest are for the Grow with Google Scholarship / Udacity Front-End Web Developer program.</p>
+        <h1 id="about">About Me</h1>
+        <p><img src="img/portrait.jpg" alt="Rusty Abbott" class="portrait">Welcome to my portfolio! My name is Rusty Abbott and I'm from Stuart, Florida. Here you'll find a collection of projects I'm working on. <a href="https://hutchinson-island.com" target="_blank">Hutchinson-Island.com</a> and <a href="http://rustyabbott.com" target="_blank">RustyAbbott.com</a> are websites I've developed for my work as a real estate broker associate and the rest are for the Grow with Google / Udacity Front-End Web Developer program.</p>
       </section>
 
-      <section class="projects">
+      <section class="projects" id="projects">
         <h1 class="software">Software Projects</h1>
         <article class="project1">
           <a href="https://hutchinson-island.com/" target="_blank">
@@ -162,8 +163,15 @@
           </li>
         </ul>
       </footer>
-
     </div>
+
+    <!-- Side navigation panel -->
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <a href="#about" onclick="closeNav()">About Me</a>
+      <a href="#projects" onclick="closeNav()">Software Projects</a>
+    </div>
+
     <script src="js/main.js"></script>
   </body>
 </html>

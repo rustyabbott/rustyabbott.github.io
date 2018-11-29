@@ -20,16 +20,16 @@ figure {
 }
 
 a {
-  color: #3178ae;
+  color: #039be5;
   text-decoration: none;
 }
 
 a:hover {
-  color: #3999af;
+  color: #039be5;
 }
 
 a:visited {
-  color: #3178ae;
+  color: #039be5;
 }
 
 .container {
@@ -71,6 +71,41 @@ a:visited {
     grid-auto-columns: 1fr;
 }
 
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  overflow-x: hidden;
+  padding-top: 60px;
+  transition: 0.5s;
+  box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28);
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 1em;
+  color: #818181;
+  display: block;
+  transition 0.3s;
+}
+
+.sidenav a:hover, .sidenav a:focus {
+  color: #039be5;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
 .software {
   grid-area: software;
 }
@@ -81,6 +116,13 @@ a:visited {
   width: 100%;
   max-width: 90px;
   place-self: start;
+}
+
+.burger {
+  font-size: 2em;
+  color: #757575;
+  justify-self: start;
+  grid-area: logo;
 }
 
 .header__name {
