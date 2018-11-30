@@ -31,6 +31,10 @@ a:visited {
   color: #039be5;
 }
 
+p {
+  background-color: #fff;
+}
+
 .container {
   display: grid;
   grid-template-areas:
@@ -54,6 +58,7 @@ a:visited {
   border-bottom: 1px solid #757575;
   justify-items: end;
   box-shadow: 0 4px 2px -2px gray;
+  margin-bottom: 20px;
 }
 
 .projects {
@@ -69,6 +74,10 @@ a:visited {
     "project7 project8";
     max-width: 1024px;
     grid-auto-columns: 1fr;
+    background-color: #f7f7f7;
+    padding: 8px;
+    box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28);
+    margin-bottom: 20px;
 }
 
 .sidenav {
@@ -122,6 +131,7 @@ a:visited {
 
 .software {
   grid-area: software;
+  background-color: #f7f7f7;
 }
 
 .header__logo {
@@ -169,6 +179,10 @@ h2 {
 .about {
   grid-area: about;
   max-width: 1024px;
+  background-color: #f7f7f7;
+  margin-bottom: 20px;
+  padding: 8px;
+  box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28);
 }
 
 .project1 {
@@ -228,35 +242,35 @@ h2 {
 }
 
 .one {
-  background-color: #3491a3;
+  background-color: #ea4335;
 }
 
 .two {
-  background-color: #7eb8de;
+  background-color: #4285f4;
 }
 
 .three {
-  background-color: #3c78aa;
+  background-color: #ea4335;
 }
 
 .four {
-  background-color: #95d680;
+  background-color: #34a853;
 }
 
 .five {
-  background-color: #9966ff;
+  background-color: #34a853;
 }
 
 .six {
-  background-color: #ff6347;
+  background-color: #fbbc05;
 }
 
 .seven {
-  background-color: #fff284;
+  background-color: #4285f4;
 }
 
 .eight {
-  background-color: #d73e68;
+  background-color: #fbbc05;
 }
 
 .project-square span {
@@ -292,10 +306,10 @@ h2 {
 }
 
 .portrait {
-  width: 100%;
-  height: auto;
-  float: left;
-  padding: 0 10px 10px 0;
+  display: block;
+  max-width: 300px;
+  margin: 0 auto;
+  border-radius: 50%;
 }
 
 /* tablet */
@@ -317,7 +331,8 @@ h2 {
     font-size: 2.8em;
   }
   .portrait {
-    max-width: 300px;
+    float: left;
+    padding: 0 10px 10px 0;
   }
 }
 
