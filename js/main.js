@@ -10,10 +10,13 @@ if ('serviceWorker' in navigator) {
 }
 
 // Side navigation panel
+const mySidenav = document.getElementById('mySidenav');
+let isOpen = false;
+
 function openNav() {
-  document.getElementById('mySidenav').style.width = '250px';
+  mySidenav.style.width = '250px';
 }
 
 function closeNav() {
-  document.getElementById('mySidenav').style.width = '0';
+  mySidenav.style.width = '0';
 }

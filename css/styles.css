@@ -6,7 +6,6 @@ html {
   color: #757575;
   font-family: Gotham, gotham, Verdana, sans-serif;
   font-size: 18px;
-  padding: 5px;
 }
 
 img {
@@ -34,13 +33,12 @@ a:visited {
 
 .container {
   display: grid;
-  grid-gap: 5px;
   grid-template-areas:
     "header"
     "about"
     "projects"
     "footer";
-  max-width: 1024px;
+  width: 100%;
   margin: 0 auto;
   justify-items: center;
 }
@@ -55,19 +53,21 @@ a:visited {
   grid-template-columns: 20% 80%;
   border-bottom: 1px solid #757575;
   justify-items: end;
+  box-shadow: 0 4px 2px -2px gray;
 }
 
 .projects {
   grid-area: projects;
   grid-gap: 5px;
   display: grid;
+  width: 100%;
   grid-template-areas:
     "software software"
     "project1 project2"
     "project3 project4"
     "project5 project6"
     "project7 project8";
-    width: 100%;
+    max-width: 1024px;
     grid-auto-columns: 1fr;
 }
 
@@ -86,12 +86,12 @@ a:visited {
 }
 
 .sidenav a {
-  padding: 8px 8px 8px 32px;
+  padding: 8px 8px 8px 16px;
   text-decoration: none;
   font-size: 1em;
   color: #818181;
   display: block;
-  transition 0.3s;
+  transition 0.5s;
 }
 
 .sidenav a:hover, .sidenav a:focus {
@@ -104,6 +104,20 @@ a:visited {
   right: 10px;
   font-size: 36px;
   margin-left: 50px;
+}
+
+.sidenav .closebtn:hover, .sidenav .closebtn:focus {
+  color: #111;
+}
+
+.sidenav ul {
+  list-style-type: none;
+  font-size: 0.8em;
+  padding: 0 0 0 24px;
+}
+
+.sidenav ul li {
+  padding: 3px 0;
 }
 
 .software {
@@ -119,21 +133,26 @@ a:visited {
 }
 
 .burger {
-  font-size: 2em;
+  font-size: 2.4em;
   color: #757575;
   justify-self: start;
   grid-area: logo;
 }
 
+.burger:hover, .burguer:focus {
+  color: #111;
+}
+
 .header__name {
   grid-area: name;
-  font-size: 2em;
+  font-size: 1.75em;
   font-weight: bold;
+  color: rgba(0,0,0,.54);
 }
 
 .header__tag {
   grid-area: tag;
-  font-size: 1em;
+  font-size: 0.8em;
 }
 
 h1 {
@@ -149,6 +168,7 @@ h2 {
 
 .about {
   grid-area: about;
+  max-width: 1024px;
 }
 
 .project1 {
@@ -288,10 +308,13 @@ h2 {
       "project7 project8 project9";
   }
   .header__name {
-    font-size: 3em;
+    font-size: 2em;
   }
   .header__tag {
-    font-size: 1.5em;
+    font-size: 1em;
+  }
+  .burger {
+    font-size: 2.8em;
   }
   .portrait {
     max-width: 300px;
@@ -301,7 +324,6 @@ h2 {
 /* desktop */
 @media screen and (min-width: 1024px) {
   .container {
-    max-width: 1024px;
     margin: 0 auto;
   }
   .projects {
@@ -314,9 +336,9 @@ h2 {
     max-width: 120px;
   }
   .header__name {
-    font-size: 4em;
+    font-size: 2.5em;
   }
   .header__tag {
-    font-size: 2em;
+    font-size: 1.2em;
   }
 }
