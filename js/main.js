@@ -10,13 +10,20 @@ if ('serviceWorker' in navigator) {
 }
 
 // Side navigation panel
-const mySidenav = document.getElementById('mySidenav');
-let isOpen = false;
+const mySidenav = $('#mySidenav');
+const burger = $('.fa-bars');
 
 function openNav() {
-  mySidenav.style.width = '250px';
+  mySidenav.css('width', '250px');
 }
 
 function closeNav() {
-  mySidenav.style.width = '0';
+  mySidenav.css('width', 0);
 }
+
+// Close side navigation panel by clicking outside of it
+$(document).click(function(e) {
+  if (!mySidenav.is(e.target) && !burger.is(e.target)) {
+    mySidenav.css('width', 0);
+  }
+});
