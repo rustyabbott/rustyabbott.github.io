@@ -32,7 +32,7 @@ a:visited {
 }
 
 p {
-  background-color: #fff;
+  color: #212121;
 }
 
 .container {
@@ -49,6 +49,7 @@ p {
 
 .header {
   grid-area: header;
+  position: fixed;
   width: 100%;
   display: grid;
   grid-template-areas:
@@ -58,7 +59,7 @@ p {
   border-bottom: 1px solid #757575;
   justify-items: end;
   box-shadow: 0 4px 2px -2px gray;
-  margin-bottom: 20px;
+  background-color: #fff;
 }
 
 .projects {
@@ -143,10 +144,11 @@ p {
 }
 
 .burger {
-  font-size: 2.4em;
+  font-size: 2.5em;
   color: #757575;
   justify-self: start;
   grid-area: logo;
+  padding-left: 10px;
 }
 
 .burger:hover, .burguer:focus {
@@ -158,11 +160,13 @@ p {
   font-size: 1.75em;
   font-weight: bold;
   color: rgba(0,0,0,.54);
+  padding-right: 10px;
 }
 
 .header__tag {
   grid-area: tag;
   font-size: 0.8em;
+  padding-right: 10px;
 }
 
 h1 {
@@ -180,7 +184,7 @@ h2 {
   grid-area: about;
   max-width: 1024px;
   background-color: #f7f7f7;
-  margin-bottom: 20px;
+  margin: 76px 0 20px 0;
   padding: 8px;
   box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28);
 }
@@ -306,10 +310,11 @@ h2 {
 }
 
 .portrait {
-  display: block;
   max-width: 300px;
   margin: 0 auto;
   border-radius: 50%;
+  vertical-align: top;
+  display: block;
 }
 
 /* tablet */
@@ -331,8 +336,8 @@ h2 {
     font-size: 2.8em;
   }
   .portrait {
-    float: left;
     padding: 0 10px 10px 0;
+    float: left;
   }
 }
 
@@ -355,5 +360,8 @@ h2 {
   }
   .header__tag {
     font-size: 1.2em;
+  }
+  .burger {
+    font-size: 3.7em;
   }
 }
