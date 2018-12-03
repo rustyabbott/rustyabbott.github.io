@@ -50,6 +50,8 @@ p {
 .header {
   grid-area: header;
   position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   display: grid;
   grid-template-areas:
@@ -351,6 +353,9 @@ h2 {
       "software software software software"
       "project1 project2 project3 project4"
       "project5 project6 project7 project8";
+  }
+  .about {
+    margin: 96px 0 20px 0;
   }
   .header__logo {
     max-width: 120px;
