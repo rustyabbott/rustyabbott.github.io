@@ -341,6 +341,22 @@ h2 {
   margin: 100px auto 20px;
 }
 
+.rubric-toggle {
+  color: blue;
+}
+
+.rubric-toggle:hover, .rubric-toggle:focus {
+  cursor: pointer;
+}
+
+.rubric {
+  display: none;
+}
+
+.rubric li {
+  margin: 10px;
+}
+
 /* tablet */
 @media screen and (min-width: 640px ) {
   .projects {

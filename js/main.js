@@ -27,3 +27,11 @@ $(document).click(function(e) {
     mySidenav.css('width', 0);
   }
 });
+
+// Expand and collapse the rubric
+const rubric = $('.rubric');
+const rubricToggle = $('.rubric-toggle');
+
+rubricToggle.click(function() {
+  rubric.slideToggle('slow');
+})
