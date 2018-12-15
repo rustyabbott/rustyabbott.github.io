@@ -35,3 +35,11 @@ const rubricToggle = $('.rubric-toggle');
 rubricToggle.click(function() {
   rubric.slideToggle('slow');
 })
+
+// Expand and collapse step setup
+const setup = $('.setup');
+const setupToggle = $('.setup-toggle');
+
+setupToggle.click(function() {
+  setup.slideToggle('slow');
+})

@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <meta charset="utf-8">
     <meta name="description" content="Final project for the Grow with Google / Udacity Front End Web Developer Nanodegree. Build a responsive web app with React utilizing Google Maps API and Foursquare API to display a list of locations in your home town.">
   	<meta property="og:title" content="Neighborhood Map Tutorial (React) | Grow with Google / Udacity Front End Web Developer Nanodegree">
   	<meta property="og:image" content="">
@@ -11,7 +12,6 @@
   	<meta name="twitter:title" content="Neighborhood Map Tutorial (React) | Grow with Google / Udacity Front End Web Developer Nanodegree">
   	<meta name="twitter:description" content="Final project for the Grow with Google / Udacity Front End Web Developer Nanodegree. Build a responsive web app with React utilizing Google Maps API and Foursquare API to display a list of locations in your home town.">
   	<meta name="twitter:image" content="">
-    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scael=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -33,7 +33,7 @@
         <article>
           <span class="sub">< React, JavaScript, HTML5, CSS3 /></span>
           <h1>Project Overview</h1>
-          <p>Welcome to my neighborhood map! This was the final project for the Grow with Google / Udacity Front End Web Developer Nanodegree program. The assignment involved building a single page web app utilizing React and incoroporating Google Maps, plus a third party API of your choice.</p>
+          <p>Welcome to my neighborhood map! This was the final project for the Grow with Google / Udacity Front End Web Developer Nanodegree program. The assignment involved building a single page web app utilizing React and incoroporating Google Maps, plus a third party API of your choice. Features include responsiveness, filters, asynchronous API requests, error handling, semantics, accessibility, and use of a service worker.</p>
           <img src="../../img/map-screenshot.jpg" alt="neighborhood map screenshot">
           <p>For a full list of specifications, check out the <span class="rubric-toggle">rubric</span>.
             <ul class="rubric">
@@ -54,14 +54,27 @@
               <li><b>Accessible Images: </b>All content-related images include appropriate alternate text that clearly describes the content of the image.</li>
               <li><b>Service Worker: </b>When available in the browser, the site uses a service worker to cache responses to requests for site assets. Visited pages are rendered when there is no network access.</li>
               <li><b>Proper Use of React: </b>React code follows a reasonable component structure.<br><br>State control is managed appropriately: event handlers are passed as props to child components, and state is managed by parent component functions when appropriate.<br><br>There are at least 5 locations in the model.<br><br>These may be hard-coded or retrieved from a data API.<br><br>There are no errors. There are no warnings that resulted from not following the best practices listed in the documentation, such as using key for list items. All code is functional and formatted properly.</li>
-              <span class="rubric-toggle" style="float: right;">collapse ^</span>
+              <span class="expand-toggle" style="float: right;">collapse ^</span>
             </ul>
           </p>
         </article>
 
         <article>
-          <h1>Steps</h1>
-          <p>Step by step...</p>
+          <h1>Walk-through</h1>
+          <p>1) <span class="setup-toggle">Setup Development Environment</span></p>
+          <section class="setup">
+            <ol>
+              <li>Open a terminal and navigate to your project folder.</li>
+              <li>Install Facebook's <a href="https://github.com/facebook/create-react-app" target="_blank">create-react-app</a> by tying:
+                <ul class="code">
+                  <li>npx create-react-app my-app</li>
+                  <li>cd my-app</li>
+                  <li>npm start</li>
+                </ul>
+              </li>
+              <li>If it doesn't happen automatically, open your browser and type localhost:3000 into the address bar. You should see something like this: <img src="../../img/react-app-screenshot.jpg"></li>
+            </ol>
+          </section>
         </article>
 
         <article>

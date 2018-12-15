@@ -8,6 +8,11 @@ html {
   font-size: 18px;
 }
 
+body {
+  margin: 0;
+  padding: 0;
+}
+
 img {
   height: auto;
   width: 100%;
@@ -81,7 +86,7 @@ p {
   background-color: #fff;
   padding: 8px;
   box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28);
-  margin-bottom: 20px;
+  margin: 0 10px 20px 10px;
 }
 
 .sidenav {
@@ -192,7 +197,7 @@ h2 {
   grid-area: about;
   max-width: 1024px;
   background-color: #fff;
-  margin: 76px 0 20px 0;
+  margin: 76px 10px 20px 10px;
   padding: 8px;
   box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28);
 }
@@ -335,6 +340,9 @@ h2 {
   flex-direction: column;
   width: 100%;
   background-image: linear-gradient(to top right, yellow, #3f51b5);
+  border: none;
+  margin: 0;
+  padding: 0;
 }
 
 .tutorial article {
@@ -347,8 +355,16 @@ h2 {
   margin: 100px auto 20px;
 }
 
+.tutorial article p {
+  padding: 0 18px;
+}
+
+.tutorial article section {
+  padding: 0 36px;
+}
+
 .rubric-toggle {
-  color: blue;
+  color: #039be5;
 }
 
 .rubric-toggle:hover, .rubric-toggle:focus {
@@ -361,6 +377,39 @@ h2 {
 
 .rubric li {
   margin: 10px;
+}
+
+.setup-toggle {
+  color: #039be5;
+}
+
+.setup-toggle:hover, .setup-toggle:focus {
+  cursor: pointer;
+}
+
+.setup {
+  display: none;
+}
+
+ol {
+  list-style-type: lower-alpha;
+}
+
+.code {
+  list-style-type: none;
+  padding: 10px;
+  background-color: #f6f8fa;
+}
+
+.code li {
+  color: #24292e;
+  font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+  padding: 2px;
+}
+
+ol li img {
+  border-radius: 5px;
+  margin: 10px auto;
 }
 
 /* tablet */
@@ -377,6 +426,9 @@ h2 {
   }
   .header__tag {
     font-size: 1em;
+  }
+  .about {
+    margin: 85px 10px 20px 10px;
   }
   .burger {
     font-size: 2.8em;
@@ -398,9 +450,7 @@ h2 {
       "project1 project2 project3 project4"
       "project5 project6 project7 project8";
   }
-  .about {
-    margin: 96px 0 20px 0;
-  }
+
   .header__logo {
     max-width: 120px;
   }
