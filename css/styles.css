@@ -87,7 +87,7 @@ p {
   padding: 8px;
   box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28);
   margin-left: 10px;
-  margin-right: 0 10px 20px 10px;
+  margin: 0 10px 20px 10px;
 }
 
 .sidenav {
