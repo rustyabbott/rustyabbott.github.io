@@ -343,7 +343,7 @@ h2 {
   background-image: linear-gradient(to top right, yellow, #3f51b5);
   border: none;
   margin: 0;
-  padding: 0;
+  padding-top: 100px;
 }
 
 .tutorial article {
@@ -353,7 +353,7 @@ h2 {
   padding: 10px;
   margin: 0 auto;
   max-width: 960px;
-  margin: 100px auto 20px;
+  margin: 20px auto 20px;
 }
 
 .tutorial article p {
@@ -398,7 +398,7 @@ ol {
 
 .code {
   list-style-type: none;
-  padding: 10px;
+  padding: 15px auto;
   background-color: #f6f8fa;
 }
 
@@ -411,6 +411,14 @@ ol {
 ol li img {
   border-radius: 5px;
   margin: 10px auto;
+}
+
+.blink {
+  animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+  50% { opacity: 0; }
 }
 
 /* tablet */
