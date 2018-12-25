@@ -10,7 +10,7 @@
   	<meta name="twitter:site" content="@rustyabbott">
   	<meta name="twitter:title" content="Rusty Abbott | Developer Portfolio">
   	<meta name="twitter:description" content="A compilation of software engineering and web development projects by Rusty Abbott. Languages utilized include JavaScript, jQuery, React, PHP, SQL, HTML5, and CSS3.">
-  	<meta name="twitter:image" content="img/bubble-sory.png">
+  	<meta name="twitter:image" content="img/bubble-sort.png">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scael=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -22,10 +22,10 @@
   <body>
     <div class="container">
       <header class="header">
-        <a href="javascript:void(0);" class="burger" onclick="openNav()">
+        <a href="javascript:void(0);" class="burger" onclick="openNav()" aria-label="Menu">
           <i class="fa fa-bars"></i>
         </a>
-        <div class="header__name"><a href="index.html">Rusty Abbott</a></div>
+        <div class="header__name"><a href="index.html" aria-label="Home">Rusty Abbott</a></div>
         <div class="header__tag">Full Stack Developer<span class="blink">_</span></div>
       </header>
 
@@ -150,14 +150,14 @@
         <ul>
           <li>
             <div class="social-icon twitter">
-              <a href="https://twitter.com/rustyabbott" title="Twitter" target="_blank">
+              <a href="https://twitter.com/rustyabbott" title="Twitter" target="_blank" aria-label="Rusty Abbott on Twitter">
                 <img src="img/twitter-icon.svg" alt="Twitter icon">
               </a>
             </div>
           </li>
           <li>
             <div class="social-icon">
-              <a href="https://github.com/rustyabbott" title="Github" target="_blank">
+              <a href="https://github.com/rustyabbott" title="Github" target="_blank" aria-label="Rusty Abbott on Github">
                 <img src="img/github-icon.svg" alt="Github icon">
               </a>
             </div>
@@ -168,7 +168,7 @@
 
     <!-- Side navigation panel -->
     <div id="mySidenav" class="sidenav">
-      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" aria-label="Close">&times;</a>
       <a href="#" onclick="closeNav()">About Me</a>
       <a href="#projects" onclick="closeNav()">Software Projects</a>
       <ul>
