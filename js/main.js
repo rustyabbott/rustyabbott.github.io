@@ -36,10 +36,18 @@ rubricToggle.click(function() {
   rubric.slideToggle('slow');
 })
 
-// Expand and collapse step setup
+// Expand and collapse step 1: Setup your development environment
 const setup = $('.setup');
 const setupToggle = $('.setup-toggle');
 
 setupToggle.click(function() {
   setup.slideToggle('slow');
+})
+
+// Expand and collapse step 2: Choose your map component
+const choose = $('.choose');
+const chooseToggle = $('.choose-toggle');
+
+chooseToggle.click(function() {
+  choose.slideToggle('slow');
 })

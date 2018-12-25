@@ -75,13 +75,18 @@
               <li>If it doesn't happen automatically, open your browser and type localhost:3000 into the address bar. You should see something like this: <img src="../../img/react-app-screenshot.jpg" alt="react app screenshot"></li>
             </ol>
           </section>
+          <p>2) <span class="choose-toggle">Choose Your Map Component</span></p>
+          <section class="choose">
+            <ol>
+              <li>There are a variety of map components you can use for the project, but we'll be using <a href="https://www.npmjs.com/package/google-maps-react" target="_blank">google-maps-react</a> for this walk-through. Use the terminal command below to install the library.
+                <ul class="code">
+                  <li>npm install --save google-maps-react</li>
+                </ul>
+              <li>The library includes a wrapper called GoogleApiWrapper that we'll use to wrap around the Google Maps API. To do this, we'll create a new file with the path my-app/src/components/MapContainer.js. The file should look something like this: <img src="../../img/mapcontainer-screenshot-1.png" alt="Map container screenshot"></li>
+              </li>
+            </ol>
+          </section>
         </article>
-
-        <article>
-          <h1>Conclusion</h1>
-          <p>What I've learned...</p>
-        </article>
-      </section>
 
       <footer class="footer">
         <div class="copywrite">
@@ -89,7 +94,7 @@
         </div>
         <ul>
           <li>
-            <div class="social-icon twitter">
+            <div class="social-icon">
               <a href="https://twitter.com/rustyabbott" title="Twitter" target="_blank">
                 <img src="../../img/twitter-icon.svg" alt="Twitter icon">
               </a>

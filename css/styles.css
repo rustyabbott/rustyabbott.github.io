@@ -305,15 +305,12 @@ h2 {
 
 .footer {
   grid-area: footer;
+  text-align: center;
 }
 
 .social-icon {
   height: 24px;
   width: 24px;
-}
-
-.twitter {
-  background-color: black;
 }
 
 .footer ul {
@@ -393,6 +390,18 @@ h2 {
   display: none;
 }
 
+.choose-toggle {
+  color: #039be5;
+}
+
+.choose-toggle:hover, .choose-toggle:focus {
+  cursor: pointer;
+}
+
+.choose {
+  display: none;
+}
+
 ol {
   list-style-type: lower-alpha;
 }
@@ -401,6 +410,8 @@ ol {
   list-style-type: none;
   padding: 15px auto;
   background-color: #f6f8fa;
+  margin: 16px auto;
+  padding: 8px;
 }
 
 .code li {
