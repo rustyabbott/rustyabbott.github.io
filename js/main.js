@@ -51,3 +51,11 @@ const chooseToggle = $('.choose-toggle');
 chooseToggle.click(function() {
   choose.slideToggle('slow');
 })
+
+// Expand and collapse step 3: Display the Map
+const displayMap = $('.display-map');
+const displayMapToggle = $('.display-map-toggle');
+
+displayMapToggle.click(function() {
+  displayMap.slideToggle('slow');
+})
