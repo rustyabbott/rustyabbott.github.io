@@ -194,6 +194,10 @@ h2 {
   text-align: center;
 }
 
+.contact {
+  list-style-type: none;
+}
+
 .about {
   grid-area: about;
   max-width: 1024px;
