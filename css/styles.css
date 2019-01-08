@@ -262,52 +262,16 @@ h2 {
 .project-square {
   width: 100%;
   height: auto;
+  min-height: 173px;
+  max-height: 173px;
+  overflow: hidden;
   color: white;
-  text-align: center;
-  vertical-align: middle;
+  border: 1px solid #d3d3d3;
+  border-radius: 6px;
 }
 
 .project-square:hover, .project-square:focus {
   box-shadow: 0 4px 2px -2px gray;
-}
-
-.one {
-  background-color: #ea4335;
-}
-
-.two {
-  background-color: #4285f4;
-}
-
-.three {
-  background-color: #ea4335;
-}
-
-.four {
-  background-color: #34a853;
-}
-
-.five {
-  background-color: #34a853;
-}
-
-.six {
-  background-color: #fbbc05;
-}
-
-.seven {
-  background-color: #4285f4;
-}
-
-.eight {
-  background-color: #fbbc05;
-}
-
-.project-square span {
-  width: 100%;
-  height: auto;
-  font-size: 8em;
-  font-weight: bolder;
 }
 
 .footer {
@@ -512,5 +476,11 @@ ol li img {
   }
   .burger {
     font-size: 3em;
+  }
+  .project-square {
+    transition: .2s;
+  }
+  .project-square:hover, .project-square:focus {
+    transform: scale(1.5);
   }
 }
