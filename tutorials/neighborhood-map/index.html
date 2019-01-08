@@ -32,7 +32,7 @@
       <section class="tutorial">
         <article>
           <span class="sub">< React, JavaScript, HTML5, CSS3 /></span>
-          <h1>Project Overview</h1>
+          <h1>Project Overview | Neighborhood Map</h1>
           <p>Welcome to my neighborhood map! This was the final project for the Grow with Google / Udacity Front End Web Developer Nanodegree program. The assignment involved building a single page web app utilizing React and incoroporating Google Maps, plus a third party API of your choice. Features include responsiveness, filters, asynchronous API requests, error handling, semantics, accessibility, and use of a service worker.</p>
           <img src="../../img/map-screenshot.jpg" alt="neighborhood map screenshot">
           <p>For a full list of specifications, check out the <span class="rubric-toggle">rubric</span>.
@@ -93,6 +93,16 @@
               <li>In our MapContainer component, we'll add a few properties to Map to display and center our map.<img src="../../img/map-container-screenshot-2.jpg" alt="Map container screenshot 2"> Our App.js file now looks like the code below. I used lattitude and longitude coordinates of my hometown Stuart, Florida, but you can modify them with any location of your choice. <img src="../../img/app-screenshot.jpg" alt="App.js screenshot">...and now the map is displayed! <img src="../../img/render-screenshot.jpg" alt="Map render screenshot"> </li>
             </ol>
           </section>
+          <p>4) <span class="display-pins-toggle">Display Pins on the Map</span></p>
+          <section class="display-pins">
+            <ol>
+              <li>The next thing we'll want to do is display the pin locations. To do this, I've hard-coded locations in a .json file like the one below. You may add as many locations as you'd like, but make sure there are at least five. <img src="../../img/pins.json-screenshot.jpg" alt="Pins.json screenshot"></li>
+              <li>We'll make a small change to our App.js file, adding pins={this.state.pins} to our MapContainer as seen here: <img src="../../img/pins-screenshot.png" alt="App.js screenshot"></li>
+              <li>Write a couple functions in MapContainer.js to combine our pins.json info with the map. We'll call these two functions fetchPlaces: <img src="../../img/fetchPlaces.png" alt="fetchPlaces function screenshot">...and updateMarkers: <img src="../../img/updateMarkers.png" alt="updateMarkers function"></li>
+              <li>Don't forget to add onReady={this.fetchPlaces}: <img src="../../img/onReady.png" alt="onReady"></li>
+              <li>And now we see our pins! <img src="../../img/pins-on-map.png" alt="Pins on map"></li>
+            </ol>
+          </section>
         </article>
 
       <footer class="footer">
@@ -132,6 +142,10 @@
         <li><a href="../../restaurant-reviews/index.html">Restaurant Reviews</a></li>
         <li><a href="http://rusty.ninja/react-myreads/">React MyReads</a></li>
         <li><a href="../../neighborhood-map/index.html">Neighborhood Map</a></li>
+      </ul>
+      <a href="../index.html">Tutorials</a>
+      <ul>
+        <li><a href="index.html">Neighborhood Map</a></li>
       </ul>
     </div>
 

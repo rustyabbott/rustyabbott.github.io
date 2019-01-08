@@ -59,3 +59,11 @@ const displayMapToggle = $('.display-map-toggle');
 displayMapToggle.click(function() {
   displayMap.slideToggle('slow');
 })
+
+// Expand and collapse step 4: Display Pins on Map
+const displayPins = $('.display-pins');
+const displayPinsToggle = $('.display-pins-toggle');
+
+displayPinsToggle.click(function() {
+  displayPins.slideToggle('slow');
+})
