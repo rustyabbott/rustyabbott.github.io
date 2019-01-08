@@ -50,8 +50,9 @@ p {
   width: 100%;
   margin: 0 auto;
   justify-items: center;
-  background-color: #f7f7f7;
   padding-top: 100px;
+  background: rgb(2,0,36);
+  background: linear-gradient(345deg, rgba(2,0,36,1) 0%, rgba(98,63,177,1) 32%, rgba(0,212,255,1) 72%, rgba(0,180,255,1) 89%);
 }
 
 .header {
@@ -88,6 +89,7 @@ p {
   padding: 8px;
   box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28);
   margin-bottom: 20px;
+  border-radius: 20px 0;
 }
 
 .sidenav {
@@ -206,6 +208,7 @@ h2 {
   width: 98%;
   padding: 8px;
   box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28);
+  border-radius: 20px 0;
 }
 
 .project1 {
