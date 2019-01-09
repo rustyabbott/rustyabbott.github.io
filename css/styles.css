@@ -212,6 +212,10 @@ h2 {
   border-radius: 20px 0;
 }
 
+.about p {
+  padding: 10px;
+}
+
 .eloper {
   display: none;
 }
