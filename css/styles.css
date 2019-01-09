@@ -177,6 +177,7 @@ p {
   grid-area: tag;
   font-size: 0.8em;
   padding-right: 10px;
+  font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
 }
 
 h1 {
@@ -311,7 +312,6 @@ h2 {
   display: flex;
   flex-direction: column;
   width: 100%;
-  background-image: linear-gradient(to top right, yellow, #3f51b5);
   border: none;
   margin: 0;
   padding-top: 100px;
@@ -320,7 +320,7 @@ h2 {
 .tutorial article {
   background-color: #fff;
   border-radius: 20px 0;
-  width: 90%;
+  width: 98%;
   padding: 10px;
   margin: 0 auto;
   max-width: 960px;
