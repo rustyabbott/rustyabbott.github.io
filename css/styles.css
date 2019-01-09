@@ -212,6 +212,10 @@ h2 {
   border-radius: 20px 0;
 }
 
+.eloper {
+  display: none;
+}
+
 .project1 {
  grid-area: project1;
  width: 100%;
@@ -452,6 +456,9 @@ ol li img {
   .portrait {
     padding: 0 10px 10px 0;
     float: left;
+  }
+  .eloper {
+    display: inline;
   }
 }
 
