@@ -14,7 +14,7 @@ const mySidenav = $('#mySidenav');
 const burger = $('.fa-bars');
 
 function openNav() {
-  mySidenav.css('width', '250px');
+  mySidenav.css('width', '320px');
 }
 
 function closeNav() {

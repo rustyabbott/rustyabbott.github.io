@@ -7,7 +7,14 @@ const cacheFiles = [
   '/img/github-icon.svg',
   '/img/logo.jpg',
   '/img/twitter-icon.svg',
-  '/img/portrait.jpg'
+  '/img/portrait.jpg',
+  '/img/rustyabbott.com-screenshot.png',
+  '/img/arcade-game-screenshot.png',
+  '/img/bubble-sort.png',
+  '/img/feedreader-screenshot.png',
+  '/img/github-white-logo.svg',
+  '/img/restaurant-reviews-screenshot.png',
+  '/img/react-myreads-screenshot.png',
 ];
 
 self.addEventListener('install', event => {
