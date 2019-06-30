@@ -16,3 +16,6 @@
 [submodule "neighborhood-map"]
 	path = neighborhood-map
 	url = https://github.com/rustyabbott/neighborhood-map
+[submodule "clock"]
+	path = clock
+	url = https://github.com/rustyabbott/clock.git
