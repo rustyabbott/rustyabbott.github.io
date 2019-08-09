@@ -82,7 +82,8 @@ p {
     "project1 project2"
     "project3 project4"
     "project5 project6"
-    "project7 project8";
+    "project7 project8"
+    "project9 project10";
   max-width: 1024px;
   grid-auto-columns: 1fr;
   background-color: #fff;
@@ -265,6 +266,12 @@ h2 {
 
 .project8 {
   grid-area: project8;
+  width: 100%;
+  height: auto;
+}
+
+.project9 {
+  grid-area: project9;
   width: 100%;
   height: auto;
 }
@@ -478,7 +485,8 @@ ol li img {
     grid-template-areas:
       "software software software software"
       "project1 project2 project3 project4"
-      "project5 project6 project7 project8";
+      "project5 project6 project7 project8"
+      "project9 project10 project11 project12";
   }
   .header__logo {
     max-width: 120px;
